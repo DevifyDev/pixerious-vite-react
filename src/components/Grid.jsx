@@ -1,15 +1,7 @@
-import { useState, useEffect } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import { data } from './data/grid.js'
 
 export default function Grid() {
-    const [articleId, setArticleId] = useState(null)
-    const navigate = useNavigate()
-
-    const handleClick = (id) => {
-        setArticleId(id)
-        navigate(`./article/${id}`)
-    }
       
     return (
         <section className="gridParentContainer" id="grid">
@@ -26,7 +18,12 @@ export default function Grid() {
                                 <p className="gridText2">{text2}</p>
                             <h3 className="gridTitle">{title}</h3>
                             <p className="gridContent">{content}</p>
-                            <button className="ctaBtn" id={id} onClick={() => handleClick(id)}>Read Full Article</button>
+                            <Link
+                                to={`./article/${id}`}
+                                className="ctaBtn"
+                                >
+                                Read Full Article
+                            </Link>
                             </div>
                         </div>
                     </div>

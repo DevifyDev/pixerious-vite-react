@@ -406,6 +406,8 @@ button{
   transition: all 0.3s ease;
   margin-top: 1rem;
   border: none; 
+  display: inline-block;
+  text-align: center;
 }
 .ctaBtn:hover {
   cursor: pointer;
