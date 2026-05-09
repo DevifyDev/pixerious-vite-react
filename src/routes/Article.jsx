@@ -55,7 +55,7 @@ export default function Article(){
                         <p className="articleText1">{articleToDisplay.text1}</p>
                         <p className="articleText2">{articleToDisplay.text2}</p>
                     </div>
-                    <h2 className="articleTitle">{articleToDisplay.title}</h2>
+                    <h1 className="articleTitle">{articleToDisplay.title}</h1>
                     <p className="articleContent" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(articleToDisplay.content) }}></p>
                      <Link to="/">
                         <button className="ctaBtn">Home</button>
