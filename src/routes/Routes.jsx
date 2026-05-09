@@ -1,13 +1,13 @@
 import React from 'react'
 import {
-    createBrowserRouter,
+    createHashRouter,
     RouterProvider,
 } from 'react-router-dom'
 import ErrorPage from '../ErrorPage'
 import Root from './Root'
 import Article, { loader as articleLoader } from './Article'
 
-const router = createBrowserRouter([
+const router = createHashRouter([
     {
         path: "/",
         element: <Root />,
