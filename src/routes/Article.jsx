@@ -30,12 +30,11 @@ export default function Article(){
         <>
             {articleToDisplay && (
                 <Helmet>
-                    <title>{articleToDisplay.title}</title>
+                    <title>{articleToDisplay.metaTitle}</title>
                     <meta name="description" content={articleToDisplay.description} />
                     <meta name="keywords" content={articleToDisplay.keywords} />
                     <link rel="canonical" href={articleToDisplay.href} />
                 </Helmet>
-
             )}
 
             <div className="articleContainer">

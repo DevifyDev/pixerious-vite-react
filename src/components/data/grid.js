@@ -3,6 +3,10 @@ export const data =
 [          
     {
         id: 1,
+        metaTitle: "Best Cameras Under $500 in 2026 | Pixerious",
+        description: "Looking for a great camera on a budget? We picked the 5 best cameras between $300–$500 for beginners and hobbyists. Canon, Nikon, Sony & more.",
+        keywords: "best cameras under $500, budget DSLR camera, best beginner camera 2025",
+        href: "https://pixerious.com/article/1",
         img: "/news/news-img-1.jpg",
         alt: "Assorted budget-friendly cameras arranged on display, showcasing different models and brands for economical photography options",
         text1: "Admin",
