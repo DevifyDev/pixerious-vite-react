@@ -5,7 +5,7 @@ export default function Form() {
         name: '',
         email: '',
         message: ''
-    });
+    })
     const [isSubmitted, setIsSubmitted] = useState(false)
     const [showPopup, setShowPopup] = useState(false)
     const [submissionMessage, setSubmissionMessage] = useState('')

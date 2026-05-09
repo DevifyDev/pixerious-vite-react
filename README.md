@@ -19,11 +19,11 @@ To get a local copy up and running follow these simple steps:
 
 1. Clone the repo:
     ```sh
-    git clone https://github.com/DevifyDev/globarove-vite-react.git
+    git clone https://github.com/DevifyDev/pixerious-vite-react.git
     ```
 2. Navigate to the project directory:
     ```sh
-    cd pixerious
+    cd pixerious-vite-react
     ```
 3. Remove .git and node modules
     ```sh
@@ -77,6 +77,6 @@ Distributed under the MIT License.
 ## Contact Information
 
 - **Tony Young** - [Email](dev@devify.dev)
-- **Project Link** - [globarove.com](https://www.pixerious.com)
+- **Project Link** - [pixerious.com](https://www.pixerious.com)
 
 
