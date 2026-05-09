@@ -6,6 +6,7 @@ import { Helmet, HelmetProvider } from 'react-helmet-async'
 export default function App(){
   return (
     <HelmetProvider>
+      
       <Helmet>
         <title>Pixerious</title>
         <meta name="description" content="Explore the captivating world of photography at Pixerious, your ultimate resource for everything from camera reviews and the latest in AI photography to historical insights and step-by-step editing tutorials. Whether you're a professional or a hobbyist, enrich your skills and passion for photography with our expert articles and guides" />
@@ -13,6 +14,7 @@ export default function App(){
       </Helmet>
 
       <AppRoutes />
+      
     </HelmetProvider>
   )
 }

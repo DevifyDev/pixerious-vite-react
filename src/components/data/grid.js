@@ -16,6 +16,10 @@ export const data =
     },
     {
         id: 2,
+        metaTitle: "How AI Is Transforming Photo Editing & Digital Imaging | Pixerious",
+        description: "Discover how AI is revolutionising photo editing through auto enhancement, facial recognition, HDR processing, style transfer, and intelligent editing tools for photographers and creators.",
+        keywords: "AI photo editing, artificial intelligence in photography, AI image enhancement, AI photo editor, machine learning photography, HDR processing, facial recognition editing, style transfer AI, digital imaging technology, AI photography tools, automated photo editing, Adobe Sensei, Luminar AI, AI image processing, photo enhancement software",
+        href: "https://pixerious.com/article/2",
         img: "/news/news-img-2.jpg",
         alt: "Illustration of a futuristic building symbolizing the significant advancements in AI-driven photo editing technology",
         text1: "Admin",
@@ -25,6 +29,10 @@ export const data =
     },
     {
         id: 3,
+        metaTitle: "Master Golden Hour Photography: Aperture, ISO & Shutter Speed Tips",
+        description: "Learn how to capture stunning Golden Hour photos with expert photography tips on lighting, aperture, shutter speed, and ISO settings for breathtaking professional-quality images.",
+        keywords: "golden hour photography, photography tips, aperture settings, shutter speed guide, ISO photography, natural light photography, sunset photography, sunrise photography, photography lighting tips, camera settings for golden hour, beginner photography guide, landscape photography, portrait photography lighting, professional photography tips, photography techniques",
+        href: "https://pixerious.com/article/3",
         img: "/news/news-img-3.jpg",
         alt: "Illustration of a hiker gazing over a valley at dawn, capturing the sunrise with a camera",
         text1: "Admin",
@@ -34,6 +42,10 @@ export const data =
     },
     {
         id: 4,
+        metaTitle: "Ansel Adams’ Moonrise, Hernandez New Mexico: A Photography Masterpiece",
+        description: "Explore the technical brilliance behind Ansel Adams’ iconic photograph Moonrise, Hernandez New Mexico, including lighting, composition, the Zone System, and photographic legacy.",
+        keywords: "Ansel Adams, Moonrise Hernandez New Mexico, famous photography analysis, black and white photography, Zone System photography, landscape photography, photography composition, photography techniques, photography history, fine art photography, exposure control photography, large format camera photography, iconic photographs, photography masterclass, photography lighting",
+        href: "https://pixerious.com/article/4",
         img: "/news/news-img-4.jpg",
         alt: "Image of Ansel Adams iconic photograph 'Moonrise: New Mexico' with silhouetted foreground and a dramatic moonrise",
         text1: "Admin",
