@@ -31,7 +31,7 @@ export const data =
     {
         id: 4,
         img: "/news/news-img-4.jpg",
-        alt: "Image ofcAnsel Adams iconic photograph 'Moonrise: New Mexico' with silhouetted foreground and a dramatic moonrise",
+        alt: "Image of Ansel Adams iconic photograph 'Moonrise: New Mexico' with silhouetted foreground and a dramatic moonrise",
         text1: "Admin",
         text2: "3 Minute Read",
         title: "A Technical Exploration of Ansel Adams Photograph: 'Moonrise: New Mexico'",

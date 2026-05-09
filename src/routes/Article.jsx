@@ -8,6 +8,7 @@ import DOMPurify from 'dompurify'
 import Footer from '../components/Footer'
 import '../styles.css'
 import { data } from '../components/data/grid.js'
+import { Helmet } from 'react-helmet-async'
 
 export async function loader({ params }) {
     const articles = data 
@@ -27,6 +28,16 @@ export default function Article(){
 
     return (
         <>
+            {articleToDisplay && (
+                <Helmet>
+                    <title>{articleToDisplay.title}</title>
+                    <meta name="description" content={articleToDisplay.description} />
+                    <meta name="keywords" content={articleToDisplay.keywords} />
+                    <link rel="canonical" href={articleToDisplay.href} />
+                </Helmet>
+
+            )}
+
             <div className="articleContainer">
             <div className="returnIconContainer">
              <Link to="/" >  
