@@ -10,11 +10,6 @@ import '../styles.css'
 import { data } from '../components/data/grid.js'
 import { Helmet } from 'react-helmet-async'
 
-// export async function loader({ params }) {
-//     const articles = data 
-//     return { articles }
-//   }
-
 export async function loader({params}){
     const response = await fetch('http://localhost:3000/articles')
     const articles = await response.json()

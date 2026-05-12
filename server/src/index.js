@@ -14,13 +14,26 @@ app.get("/", (req, res) => {
     })
 })
 
-app.get("/articles", async (req, res) => {
+app.get('/articles', async (req, res) => {
     try {
         const articles = await prisma.article.findMany()
         res.json(articles)
     } catch (error) {
         console.error(error)
         res.status(500).json({error: 'Failed to fetch articles'})
+    }
+})
+
+app.get('/articles/:id', async (req, res) => {
+    const id = parseInt(req.params.id)
+
+    try {
+        const article = await prisma.article.findUnique({
+            where: { id }
+        })
+        response.json(article)
+    } catch (error) {
+        response.status(500).json({error: 'Failed to fetch article'})
     }
 })
 
