@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
     })
 })
 
-app.get('/articles', async (req, res) => {
+app.get("/articles", async (req, res) => {
     try {
         const articles = await prisma.article.findMany()
         res.json(articles)

@@ -1,0 +1,59 @@
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "How to Improve SEO with Structured Data",
+  "description": "Learn how JSON-LD structured data helps SEO.",
+  "image": [
+    "https://example.com/images/seo-guide.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Jane Smith"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Example Media",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logo.png"
+    }
+  },
+  "datePublished": "2026-05-01",
+  "dateModified": "2026-05-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.com/blog/structured-data-guide"
+  }
+}
+</script>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Expert photography tips and advice",
+  "description": "Explore the captivating world of photography at Pixerious, your ultimate resource for everything from camera reviews and the latest in AI photography to historical insights and step-by-step editing tutorials. Whether you're a professional or a hobbyist, enrich your skills and passion for photography with our expert articles and guides",
+  "image": [
+    "https://example.com/images/seo-guide.jpg"
+  ],
+  "author": {
+    "@type": "Person",
+    "name": "Rick Hatton"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "Devify",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://example.com/logo.png"
+    }
+  },
+  "datePublished": "2026-05-01",
+  "dateModified": "2026-05-08",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://example.com/blog/structured-data-guide"
+  }
+}
+</script>
