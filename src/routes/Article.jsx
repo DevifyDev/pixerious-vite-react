@@ -11,30 +11,30 @@ import { data } from '../components/data/grid.js'
 import { Helmet } from 'react-helmet-async'
 
 export async function loader({params}){
-    const response = await fetch('http://localhost:3000/articles')
-    const articles = await response.json()
-    return { articles }
+    const response = await fetch(`http://localhost:3000/articles/${params.id}`)
+    const article = await response.json()
+    return { article }
 }
 
 export default function Article(){
-    const { articles } = useLoaderData()
-    const { id } = useParams()
+    const { article } = useLoaderData()
+    // const { id } = useParams()
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
 
-    const articleToDisplay = articles.find(article => article.id === parseInt(id))
+    // const articleToDisplay = articles.find(article => article.id === parseInt(id))
    
 
     return (
         <>
-            {articleToDisplay && (
+            {article && (
                 <Helmet>
-                    <title>{articleToDisplay.metaTitle}</title>
-                    <meta name="description" content={articleToDisplay.description} />
-                    <meta name="keywords" content={articleToDisplay.keywords} />
-                    <link rel="canonical" href={articleToDisplay.href} />
+                    <title>{article.metaTitle}</title>
+                    <meta name="description" content={article.description} />
+                    <meta name="keywords" content={article.keywords} />
+                    <link rel="canonical" href={article.href} />
                 </Helmet>
             )}
 
@@ -46,18 +46,18 @@ export default function Article(){
                 </div>
             </Link>
             </div>
-            {articleToDisplay ? ( 
-                <div className="article" key={articleToDisplay.id}>
-                    {articleToDisplay.img && 
+            {article ? ( 
+                <div className="article" key={article.id}>
+                    {article.img && 
                     <figure className="articleImgContainer">
-                        <img className="articleImg" src={articleToDisplay.img} alt={articleToDisplay.title} />
+                        <img className="articleImg" src={article.img} alt={article.title} />
                     </figure>}
                     <div className="articleTextContainer">
-                        <p className="articleText1">{articleToDisplay.text1}</p>
-                        <p className="articleText2">{articleToDisplay.text2}</p>
+                        <p className="articleText1">{article.text1}</p>
+                        <p className="articleText2">{article.text2}</p>
                     </div>
-                    <h1 className="articleTitle">{articleToDisplay.title}</h1>
-                    <p className="articleContent" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(articleToDisplay.content) }}></p>
+                    <h1 className="articleTitle">{article.title}</h1>
+                    <p className="articleContent" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}></p>
                      <Link to="/">
                         <button className="ctaBtn">Home</button>
                     </Link>
