@@ -14,6 +14,16 @@ app.get("/", (req, res) => {
     })
 })
 
+app.get('/articles', async (req, res) => {
+    try {
+        const articles = await prisma.article.findMany()
+        res.json(articles)
+    } catch (error) {
+        console.error(error)
+        res.status(500).json({error: 'Failed to fetch articles'})
+    }
+})
+
 const PORT = 3000
 
 app.listen(PORT, ()=> {
