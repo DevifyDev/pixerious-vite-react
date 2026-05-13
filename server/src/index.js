@@ -26,20 +26,16 @@ app.get('/articles', async (req, res) => {
 
 app.get('/articles/:id', async (req, res) => {
     const id = parseInt(req.params.id)
-
     try {
         const article = await prisma.article.findUnique({
             where: { id }
         })
-
         if (!article) {
             return res.status(404).json({
                 error: 'Article not found'
             })
         }
-
         res.json(article)
-
     } catch (error) {
         res.status(500).json({error: 'Failed to fetch article'})
     }

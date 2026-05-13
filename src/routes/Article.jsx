@@ -14,6 +14,7 @@ export async function loader({params}){
 export default function Article(){
     const { article } = useLoaderData()
     const returnHomeClick = () => window.scrollTo(0,0)
+    const supabaseBucketImgUrl = "https://fdlynbyuhatngzmnqoqx.supabase.co/storage/v1/object/public/blog-images"
     const canonicalUrl = `https://pixerious.com/article/${article.id}`
 
     useEffect(() => {
@@ -43,7 +44,7 @@ export default function Article(){
                 <div className="article" key={article.id}>
                     {article.img && 
                     <figure className="articleImgContainer">
-                        <img className="articleImg" src={article.img} alt={article.title} />
+                        <img className="articleImg" src={`${supabaseBucketImgUrl}/${article.img}`} alt={article.title} />
                     </figure>}
                     <div className="articleTextContainer">
                         <p className="articleText1">{article.text1}</p>
