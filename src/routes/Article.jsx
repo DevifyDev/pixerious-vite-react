@@ -7,7 +7,6 @@ import {
 import DOMPurify from 'dompurify'
 import Footer from '../components/Footer'
 import '../styles.css'
-import { data } from '../components/data/grid.js'
 import { Helmet } from 'react-helmet-async'
 
 export async function loader({params}){

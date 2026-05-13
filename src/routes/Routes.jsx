@@ -1,8 +1,5 @@
 import React from 'react'
-import {
-    createHashRouter,
-    RouterProvider,
-} from 'react-router-dom'
+import { createHashRouter, RouterProvider } from 'react-router-dom'
 import ErrorPage from '../ErrorPage'
 import Root from './Root'
 import Article, { loader as articleLoader } from './Article'
