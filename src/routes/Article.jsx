@@ -18,14 +18,10 @@ export async function loader({params}){
 
 export default function Article(){
     const { article } = useLoaderData()
-    // const { id } = useParams()
 
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
-
-    // const articleToDisplay = articles.find(article => article.id === parseInt(id))
-   
 
     return (
         <>
