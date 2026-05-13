@@ -6,7 +6,8 @@ import '../styles.css'
 import { Helmet } from 'react-helmet-async'
 
 export async function loader({params}){
-    const response = await fetch(`http://localhost:3000/articles/${params.id}`)
+    const supabaseApiUrl = import.meta.env.VITE_API_URL
+    const response = await fetch(`${supabaseApiUrl}/articles/${params.id}`)
     const article = await response.json()
     return { article }
 }
@@ -14,7 +15,7 @@ export async function loader({params}){
 export default function Article(){
     const { article } = useLoaderData()
     const returnHomeClick = () => window.scrollTo(0,0)
-    const supabaseBucketImgUrl = "https://fdlynbyuhatngzmnqoqx.supabase.co/storage/v1/object/public/blog-images"
+    const supabaseBucketImgUrl = import.meta.env.VITE_SUPABASE_BLOG_IMAGE_URL
     const canonicalUrl = `https://pixerious.com/article/${article.id}`
 
     useEffect(() => {

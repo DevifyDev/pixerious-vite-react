@@ -7,11 +7,13 @@ export default function Grid() {
     const [articles, setArticles] = useState([])
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)  
+
+    const supabaseApiUrl = import.meta.env.VITE_API_URL
     
     useEffect(() => {
         async function fetchArticles() {
             try {
-                const response = await fetch('http://localhost:3000/articles')
+                const response = await fetch(`${supabaseApiUrl}/articles`)
                     if (!response.ok) throw new Error('Network response not ok')
                 const data = await response.json()
                 setArticles(data)
@@ -35,7 +37,7 @@ export default function Grid() {
                 const { id, img, alt, text1, text2, title, content } = article
                 const regexToStripHtmlTags = content.replace(/<[^>]+>/g, '').trim()
                 const textChunk = regexToStripHtmlTags.split(' ').slice(0,20).join(' ')
-                const supabaseBucketImgUrl = "https://fdlynbyuhatngzmnqoqx.supabase.co/storage/v1/object/public/blog-images"
+                const supabaseBucketImgUrl = import.meta.env.VITE_SUPABASE_BLOG_IMAGE_URL
                 
                 return (
                     <div className="grid" key={id}>
