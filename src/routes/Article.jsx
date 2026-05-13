@@ -17,6 +17,7 @@ export async function loader({params}){
 
 export default function Article(){
     const { article } = useLoaderData()
+    const returnHomeClick = () => window.scrollTo(0,0)
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -35,7 +36,7 @@ export default function Article(){
 
             <div className="articleContainer">
             <div className="returnIconContainer">
-             <Link to="/" >  
+             <Link to="/" onClick={returnHomeClick} >  
                 <div className="returnIconWrapper">
                     <img src="/icons/left-arrow-90.svg" alt="" />
                 </div>
@@ -53,7 +54,7 @@ export default function Article(){
                     </div>
                     <h1 className="articleTitle">{article.title}</h1>
                     <p className="articleContent" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}></p>
-                     <Link to="/" onClick={() => window.scrollTo(0,0)}>
+                     <Link to="/" onClick={returnHomeClick}>
                         <button className="ctaBtn">Home</button>
                     </Link>
                </div>
