@@ -1,9 +1,5 @@
 import React, { useEffect } from 'react'
-import { 
-    useLoaderData,
-    useParams,
-    Link,
- } from 'react-router-dom'
+import { useLoaderData, useParams, Link } from 'react-router-dom'
 import DOMPurify from 'dompurify'
 import Footer from '../components/Footer'
 import '../styles.css'
