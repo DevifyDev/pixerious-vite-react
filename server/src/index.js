@@ -5,7 +5,9 @@ import { PrismaClient } from '../generated/prisma/index.js'
 const app = express()
 const prisma = new PrismaClient()
 
-app.use(cors())
+app.use(cors({
+    origin: ['http://localhost:5173','https://www.pixerious.com', 'https://pixerious.com']
+}))
 app.use(express.json())
 
 app.get("/", (req, res) => {
@@ -41,7 +43,7 @@ app.get('/articles/:id', async (req, res) => {
     }
 })
 
-const PORT = 3000
+const PORT = process.env.PORT
 
 app.listen(PORT, ()=> {
     console.log(`Server running on http://localhost:${PORT}`)
