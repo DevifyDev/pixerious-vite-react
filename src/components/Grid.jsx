@@ -33,6 +33,8 @@ export default function Grid() {
         <section className="gridParentContainer" id="grid">
             {articles.map((article) => {
                 const { id, img, alt, text1, text2, title, content } = article
+                const regexToStripHtmlTags = content.replace(/<[^>]+>/g, '')
+                const textChunk = regexToStripHtmlTags.split(' ').slice(0,20).join(' ')
                 
                 return (
                     <div className="grid" key={id}>
@@ -44,7 +46,7 @@ export default function Grid() {
                                 <p className="gridText1">{text1}</p>
                                 <p className="gridText2">{text2}</p>
                             <h3 className="gridTitle">{title}</h3>
-                            <p className="gridContent" dangerouslySetInnerHTML={{__html: DOMPurify.sanitize(content)}}></p>
+                            <p className="gridContent">{textChunk}</p>
                             <Link to={`./article/${id}`} className="ctaBtn">
                                 Read Full Article
                             </Link>
