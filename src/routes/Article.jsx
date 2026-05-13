@@ -14,6 +14,7 @@ export async function loader({params}){
 export default function Article(){
     const { article } = useLoaderData()
     const returnHomeClick = () => window.scrollTo(0,0)
+    const canonicalUrl = `https://pixerious.com/article/${article.id}`
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -26,7 +27,7 @@ export default function Article(){
                     <title>{article.metaTitle}</title>
                     <meta name="description" content={article.description} />
                     <meta name="keywords" content={article.keywords} />
-                    <link rel="canonical" href={article.href} />
+                    <link rel="canonical" href={canonicalUrl} />
                 </Helmet>
             )}
 
