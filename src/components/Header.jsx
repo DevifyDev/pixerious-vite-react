@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom'
 
 export default function Header() {
     const [isActive, setIsActive] = useState(false)
@@ -28,7 +29,7 @@ export default function Header() {
     return (
         <header className="header">
           <nav className="navbar">
-            <a href='#home' className="websiteName">Pixerious</a>
+            <Link to="/" className="websiteName">Pixerious</Link>
             <ul className={`navMenu ${isActive ? 'active' : ''}`}>
               <li onClick={removeActive}>
                 <a href="#news" className="navLink">News</a>
