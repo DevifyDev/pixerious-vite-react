@@ -47,7 +47,7 @@ export default function Grid() {
                                 <p className="gridText2">{text2}</p>
                             <h3 className="gridTitle">{title}</h3>
                             <p className="gridContent">{textChunk}</p>
-                            <Link to={`./article/${id}`} className="ctaBtn">
+                            <Link to={`/article/${id}`} className="ctaBtn">
                                 Read Full Article
                             </Link>
                             </div>
