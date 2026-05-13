@@ -35,12 +35,13 @@ export default function Grid() {
                 const { id, img, alt, text1, text2, title, content } = article
                 const regexToStripHtmlTags = content.replace(/<[^>]+>/g, '').trim()
                 const textChunk = regexToStripHtmlTags.split(' ').slice(0,20).join(' ')
+                const supabaseBucketImgUrl = "https://fdlynbyuhatngzmnqoqx.supabase.co/storage/v1/object/public/blog-images"
                 
                 return (
                     <div className="grid" key={id}>
                         <div className="gridBox">
                             <figure className="gridImgContainer">
-                                <img className="gridImg" src={img} alt={alt} loading="lazy" />
+                                <img className="gridImg" src={`${supabaseBucketImgUrl}/${img}`} alt={alt} loading="lazy" />
                             </figure>
                             <div className="gridTextContainer">
                                 <p className="gridText1">{text1}</p>
