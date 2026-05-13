@@ -53,7 +53,7 @@ export default function Article(){
                     </div>
                     <h1 className="articleTitle">{article.title}</h1>
                     <p className="articleContent" dangerouslySetInnerHTML={{ __html: DOMPurify.sanitize(article.content) }}></p>
-                     <Link to="/">
+                     <Link to="/" onClick={() => window.scrollTo(0,0)}>
                         <button className="ctaBtn">Home</button>
                     </Link>
                </div>

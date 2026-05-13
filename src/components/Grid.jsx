@@ -33,7 +33,7 @@ export default function Grid() {
         <section className="gridParentContainer" id="grid">
             {articles.map((article) => {
                 const { id, img, alt, text1, text2, title, content } = article
-                const regexToStripHtmlTags = content.replace(/<[^>]+>/g, '')
+                const regexToStripHtmlTags = content.replace(/<[^>]+>/g, '').trim()
                 const textChunk = regexToStripHtmlTags.split(' ').slice(0,20).join(' ')
                 
                 return (
