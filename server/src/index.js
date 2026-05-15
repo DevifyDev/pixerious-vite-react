@@ -1,9 +1,13 @@
 import express from 'express'
 import cors from 'cors'
-import { PrismaClient } from '../generated/prisma/index.js'
+import { PrismaClient } from '@prisma/client'
 
 const app = express()
 const prisma = new PrismaClient()
+
+prisma.$connect()
+  .then(() => console.log('Prisma connected'))
+  .catch(err => console.error('Prisma connection error:', err))
 
 app.use(cors({
     origin: ['http://localhost:5173','https://www.pixerious.com', 'https://pixerious.com']
@@ -43,8 +47,18 @@ app.get('/articles/:id', async (req, res) => {
     }
 })
 
-const PORT = process.env.PORT
+const PORT = process.env.PORT || 3000
 
 app.listen(PORT, ()=> {
-    console.log(`Server running on http://localhost:${PORT}`)
+    console.log(`Server running on port:${PORT}`)
+})
+
+process.on('SIGINT', async () => {
+    await prisma.$disconnect()
+    process.exit(0)
+})
+
+process.on('SIGTERM', async () => {
+    await prisma.$disconnect()
+    process.exit(0)
 })
