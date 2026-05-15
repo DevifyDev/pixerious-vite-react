@@ -8,12 +8,12 @@ export default function Grid() {
     const [loading, setLoading] = useState(true)
     const [error, setError] = useState(null)  
 
-    const supabaseApiUrl = import.meta.env.VITE_API_URL
+    const apiUrl = import.meta.env.VITE_API_URL
     
     useEffect(() => {
         async function fetchArticles() {
             try {
-                const response = await fetch(`${supabaseApiUrl}/articles`)
+                const response = await fetch(`${apiUrl}/articles`)
                     if (!response.ok) throw new Error('Network response not ok')
                 const data = await response.json()
                 setArticles(data)

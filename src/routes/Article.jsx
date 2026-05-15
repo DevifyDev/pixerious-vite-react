@@ -6,8 +6,8 @@ import '../styles.css'
 import { Helmet } from 'react-helmet-async'
 
 export async function loader({params}){
-    const supabaseApiUrl = import.meta.env.VITE_API_URL
-    const response = await fetch(`${supabaseApiUrl}/articles/${params.id}`)
+    const apiUrl = import.meta.env.VITE_API_URL
+    const response = await fetch(`${apiUrl}/articles/${params.id}`)
     const article = await response.json()
     return { article }
 }
