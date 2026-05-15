@@ -17,6 +17,28 @@ export default function Article(){
     const returnHomeClick = () => window.scrollTo(0,0)
     const supabaseBucketImgUrl = import.meta.env.VITE_SUPABASE_BLOG_IMAGE_URL
     const canonicalUrl = `https://pixerious.com/article/${article.id}`
+    
+    const schema = article ? {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": article.title,
+        "description": article.description,
+        "image": `${supabaseBucketImgUrl}/${article.img}`,
+        "author": {
+            "@type": "Organization",
+            "name": "Pixerious"
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Pixerious"
+        },
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": canonicalUrl
+        },
+        "datePublished": article.createdAt,
+        "dateModified": article.createdAt
+    } : null
 
     useEffect(() => {
         window.scrollTo(0, 0);
@@ -30,6 +52,12 @@ export default function Article(){
                     <meta name="description" content={article.description} />
                     <meta name="keywords" content={article.keywords} />
                     <link rel="canonical" href={canonicalUrl} />
+
+                    {schema && (
+                        <script type="application/ld+json">
+                            {JSON.stringify(schema)}
+                        </script>
+                    )}
                 </Helmet>
             )}
 
