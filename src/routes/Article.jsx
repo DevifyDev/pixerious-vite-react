@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react'
-import { useLoaderData, useParams, Link } from 'react-router-dom'
+import { useLoaderData, Link } from 'react-router-dom'
 import DOMPurify from 'dompurify'
 import Footer from '../components/Footer'
 import '../styles.css'
@@ -17,13 +17,17 @@ export default function Article(){
     const returnHomeClick = () => window.scrollTo(0,0)
     const supabaseBucketImgUrl = import.meta.env.VITE_SUPABASE_BLOG_IMAGE_URL
     const canonicalUrl = `https://pixerious.com/article/${article.id}`
-    
-    const schema = article ? {
+
+    const schema = {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": article.title,
+        "headline": article.metaTitle,
         "description": article.description,
-        "image": `${supabaseBucketImgUrl}/${article.img}`,
+        "image": article.img
+                ? `${supabaseBucketImgUrl}/${article.img}`
+                : "https://pixerious.com/default-image.jpg",
+        "url": canonicalUrl, 
+        "articleBody": article.content.replace(/<[^>]*>/g, ''),
         "author": {
             "@type": "Organization",
             "name": "Pixerious"
@@ -38,29 +42,25 @@ export default function Article(){
         },
         "datePublished": article.createdAt,
         "dateModified": article.createdAt
-    } : null
-
+    } 
+    
     useEffect(() => {
         window.scrollTo(0, 0);
     }, [])
 
     return (
         <>
-            {article && (
-                <Helmet>
-                    <title>{article.metaTitle}</title>
-                    <meta name="description" content={article.description} />
-                    <meta name="keywords" content={article.keywords} />
-                    <link rel="canonical" href={canonicalUrl} />
+            <Helmet>
+                <title>{article.metaTitle}</title>
+                <meta name="description" content={article.description} />
+                <meta name="keywords" content={article.keywords} />
+                <link rel="canonical" href={canonicalUrl} />
 
-                    {schema && (
-                        <script type="application/ld+json">
-                            {JSON.stringify(schema)}
-                        </script>
-                    )}
-                </Helmet>
-            )}
-
+                <script type="application/ld+json">
+                        {JSON.stringify(schema)}
+                </script>
+            </Helmet>
+                    
             <div className="articleContainer">
             <div className="returnIconContainer">
              <Link to="/" onClick={returnHomeClick} >  
