@@ -10,7 +10,7 @@ prisma.$connect()
   .catch(err => console.error('Prisma connection error:', err))
 
 app.use(cors({
-    origin: ['http://localhost:5173','https://www.pixerious.com', 'https://pixerious.com']
+    origin: ['https://www.pixerious.com', 'https://pixerious.com']
 }))
 app.use(express.json())
 
